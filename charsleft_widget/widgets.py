@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
+from django.conf import settings
 from django.utils.encoding import force_unicode
 from django.template.loader import render_to_string
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 class MediaMixin(object):
@@ -10,26 +12,35 @@ class MediaMixin(object):
     class Media:
         css = {
             'screen': (
-                'charsleft_widget/css/charsleft.min.css',
+                staticfiles_storage.url(
+                    'charsleft_widget/css/charsleft.min.css',
+                    ),
                 )}
-        js = ('charsleft_widget/js/charsleft.min.js',)
+        js = (staticfiles_storage.url('charsleft_widget/js/charsleft.min.js'),)
 
 
 class CharsLeftArea(forms.Textarea, MediaMixin):
-    template_name = 'charsleft_widget/textarea_widget.html'
 
     def render(self, name, value, attrs=None):
-        if value is None: value = ''
+        if value is None:
+            value = ''
+
         final_attrs = self.build_attrs(attrs, name=name)
 
         maxlength = final_attrs.get('maxlength', False)
-        if not maxlength:
+        if maxlength is False:  # fallback to default widget
             return super(CharsLeftArea, self).render(name, value, attrs)
 
-        return render_to_string(self.template_name, {
+        if getattr(settings, 'USE_JINJA', False):
+            template_name = 'charsleft_widget/textarea.jinja'
+        else:
+            template_name = 'charsleft_widget/textarea.html'
+
+        output = super(CharsLeftArea, self).render(name, value, attrs)
+        return render_to_string(template_name, {
                 'id': final_attrs.get('id', None),
                 'name': name,
-                'widget': super(CharsLeftArea, self).render(name, value, attrs),
+                'widget': output,
                 'maxlength': force_unicode(int(maxlength)),
                 'current': force_unicode(int(maxlength) - len(value)),
                 })

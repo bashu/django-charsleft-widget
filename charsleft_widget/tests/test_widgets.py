@@ -9,8 +9,14 @@ from ..widgets import CharsLeftArea
 
 class CharsLeftAreaTest(TestCase):
 
-    def test_empty(self):
+    def test_default(self):
         self.field = forms.CharField(required=False, widget=CharsLeftArea)
 
         response = self.field.widget.render('value', None, {'id': 'id_field', 'maxlength': 512})
-        self.assertTrue('charsleft' in response and not "None" in response)
+        self.assertTrue('charsleft' in response and "count" in response)
+
+    def test_fallback(self):
+        self.field = forms.CharField(required=False, widget=CharsLeftArea)
+
+        response = self.field.widget.render('value', None, {'id': 'id_field'})
+        self.assertFalse('charsleft' in response and "count" in response)
