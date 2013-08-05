@@ -4,8 +4,6 @@ from django import forms
 from django.utils.encoding import force_unicode
 from django.template.loader import render_to_string
 
-__all__ = ['CharsLeftArea']
-
 
 class MediaMixin(object):
 
