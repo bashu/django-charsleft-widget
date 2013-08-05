@@ -1,10 +1,10 @@
-{% load i18n %}<div class="charsleft">{{ widget }}<span class="count">{% blocktrans %}<span id="{{ id }}_charsleft">{{ current }}</span> characters remaining{% endblocktrans %}</span></div>
+{% load i18n %}<div class="charsleft">{{ widget }}<span class="count">{% blocktrans %}<span class="current">{{ current }}</span> characters remaining{% endblocktrans %}</span></div>
 
 <script type="text/javascript" language="javascript">
-  $("#{{ id }}").keyup(function() {
-    $("#{{ id }}_charsleft").text(charsleft($(this), {{ maxlength }}));
+  $('.charsleft textarea[name="{{ name }}"]').keyup(function() {
+    $(this).parent().find('.current').text(charsleft($(this), {{ maxlength }}));
   });
-  $("#{{ id }}").change(function() {
-    $("#{{ id }}_charsleft").text(charsleft($(this), {{ maxlength }}));
+  $('.charsleft textarea[name="{{ name }}"]').change(function() {
+    $(this).parent().find('.current').text(charsleft($(this), {{ maxlength }}));
   });
 </script>

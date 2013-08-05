@@ -38,7 +38,6 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
 
         output = super(CharsLeftArea, self).render(name, value, attrs)
         return render_to_string(template_name, {
-                'id': final_attrs.get('id', None),
                 'name': name,
                 'widget': output,
                 'maxlength': force_unicode(int(maxlength)),
