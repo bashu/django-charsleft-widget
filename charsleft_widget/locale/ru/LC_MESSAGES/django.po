@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: charsleft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 10:50+0700\n"
-"PO-Revision-Date: 2013-04-19 10:54+0700\n"
+"POT-Creation-Date: 2013-08-05 11:44+0700\n"
+"PO-Revision-Date: 2013-08-05 11:46+0700\n"
 "Last-Translator: Basil Shubin <basil.shubin@gmail.com>\n"
 "Language-Team: RU <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,8 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: templates/charsleft_widget/textarea_widget.html:1
+#: templates/charsleft_widget/textarea.html:1
+#: templates/charsleft_widget/textarea.jinja:1
 #, python-format
-msgid "<span id=\"%(id)s_charsleft\">%(current)s</span> characters remaining"
-msgstr "Осталось <span id=\"%(id)s_charsleft\">%(current)s</span> знаков"
+msgid "<span class=\"current\">%(current)s</span> characters remaining"
+msgstr "Осталось <span class=\"current\">%(current)s</span> знаков"
