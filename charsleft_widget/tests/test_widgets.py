@@ -31,7 +31,7 @@ class CharsLeftAreaDjangoTest(TestCase):
     def tearDown(self):
         settings.USE_JINJA = self.old_USE_JINJA
 
-    def test_django_template(self):
+    def test_template(self):
         self.field = forms.CharField(required=False, widget=CharsLeftArea)
         response = self.field.widget.render('value', 'test', {'id': 'id_field', 'maxlength': 512})
         self.assertTrue('charsleft' in response and '508' in response)
@@ -46,7 +46,7 @@ class CharsLeftAreaJinjaTest(TestCase):
     def tearDown(self):
         settings.USE_JINJA = self.old_USE_JINJA
 
-    def test_django_template(self):
+    def test_template(self):
         self.field = forms.CharField(required=False, widget=CharsLeftArea)
         response = self.field.widget.render('value', 'test', {'id': 'id_field', 'maxlength': 512})
         self.assertTrue('charsleft' in response and '508' in response)
