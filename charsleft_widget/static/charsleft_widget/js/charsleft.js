@@ -4,4 +4,4 @@ var charsleft = function(source, maxlength) {
         return 0;
     }
     return maxlength - source.val().length;
-}
+};
