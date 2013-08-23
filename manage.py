@@ -41,6 +41,8 @@ JENKINS_TASKS = (
     'django_jenkins.tasks.run_pyflakes',
     'django_jenkins.tasks.run_pylint',
     'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_jshint',
+    'django_jenkins.tasks.run_csslint',
     )
 
 COVERAGE_EXCLUDES_FOLDERS = ['charsleft_widget/tests/*']
