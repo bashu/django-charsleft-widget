@@ -18,8 +18,8 @@ setup(
     author='Basil Shubin',
     author_email='basil.shubin@gmail.com',
     install_requires=[
-        'jinja2',
-        'django-jinja',
+        'jinja2==2.7.1',
+        'django-jinja==0.2.1',
     ],
     classifiers=[
         'Environment :: Web Environment',
