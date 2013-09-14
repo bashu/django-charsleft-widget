@@ -19,7 +19,7 @@ setup(
     author_email='basil.shubin@gmail.com',
     install_requires=[
         'jinja2==2.7.1',
-        'django-jinja==0.2.1',
+        'django-jinja==0.21',
     ],
     classifiers=[
         'Environment :: Web Environment',

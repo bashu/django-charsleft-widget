@@ -1,6 +1,6 @@
 django==1.4.5
 jinja2==2.7.1
-django-jinja==0.2.1
+django-jinja==0.21
 django-discover-runner
 git+https://github.com/kmmbvnr/django-jenkins.git#egg=django-jenkins
 pep8
