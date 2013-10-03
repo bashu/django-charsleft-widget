@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-charsleft-widget',
-    version='0.1.1',
+    version='0.1.2',
     packages=['charsleft_widget'],
     include_package_data=True,
     license='BSD License',
@@ -18,7 +18,7 @@ setup(
     author='Basil Shubin',
     author_email='basil.shubin@gmail.com',
     install_requires=[
-        'jinja2==2.7.1',
+        'jinja2>=2.7,<2.8',
         'django-jinja==0.21',
     ],
     classifiers=[
