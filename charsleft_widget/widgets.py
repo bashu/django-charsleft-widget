@@ -2,6 +2,7 @@
 
 from django import forms
 from django.conf import settings
+from django.utils.safestring import mark_safe
 from django.utils.encoding import force_unicode
 from django.template.loader import render_to_string
 from django.contrib.staticfiles.storage import staticfiles_storage
@@ -37,9 +38,9 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
             template_name = 'charsleft_widget/textarea.html'
 
         output = super(CharsLeftArea, self).render(name, value, attrs)
-        return render_to_string(template_name, {
-                'name': name,
-                'widget': output,
-                'maxlength': force_unicode(int(maxlength)),
-                'current': force_unicode(int(maxlength) - len(value)),
-                })
+        return mark_safe(render_to_string(template_name, {
+            'name': name,
+            'widget': output,
+            'maxlength': force_unicode(int(maxlength)),
+            'current': force_unicode(int(maxlength) - len(value)),
+        }))
