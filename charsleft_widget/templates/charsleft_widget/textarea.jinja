@@ -1,10 +1,1 @@
-<div class="charsleft">{{ widget }}<span class="count">{% trans %}<span class="current">{{ current }}</span> characters remaining{% endtrans %}</span></div>
-
-<script type="text/javascript" language="javascript">
-  $('.charsleft textarea[name="{{ name }}"]').keyup(function() {
-    $(this).parent().find('.current').text(charsleft($(this), {{ maxlength }}));
-  });
-  $('.charsleft textarea[name="{{ name }}"]').change(function() {
-    $(this).parent().find('.current').text(charsleft($(this), {{ maxlength }}));
-  });
-</script>
+<div class="charsleft" data-charsleft-field="{{ name }}" data-maxlength="{{ maxlength }}">{{ widget }}<span class="count">{% trans %}<span class="current">{{ current }}</span> characters remaining{% endtrans %}</span></div>
