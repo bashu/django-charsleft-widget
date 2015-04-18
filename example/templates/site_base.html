@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block extra_head_base %}
+  {% include "charsleft_widget/charsleft_widget_css.html" %}
+  {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block extra_body_base %}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  {% include "charsleft_widget/charsleft_widget_js.html" %}
+  {% block extra_body %}{% endblock %}
+{% endblock %}
