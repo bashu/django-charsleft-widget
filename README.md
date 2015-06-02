@@ -3,9 +3,9 @@ django-charsleft-widget
 
 django-charsleft-widget is a custom widget that limits the number of characters that can be entered in a textarea  field. The widget can also report the number of characters left before the user reaches the length limit.
 
-[![Latest Version](https://pypip.in/version/django-charsleft-widget/badge.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
-[![Downloads](https://pypip.in/download/django-charsleft-widget/badge.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
-[![License](https://pypip.in/license/django-charsleft-widget/badge.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
+[![Latest Version](https://img.shields.io/pypi/v/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
+[![Downloads](https://img.shields.io/pypi/dm/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
+[![License](https://img.shields.io/github/license/bashu/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
 
 ## Installation
 ```shell
