@@ -48,6 +48,7 @@ else:
 
 from charsleft_widget import CharsLeftArea
 
+
 class Form(forms.Form):
 
     field = CharField(max_length=128, widget=CharsLeftArea)
