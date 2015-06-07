@@ -8,6 +8,7 @@ Authored by [Basil Shubin](https://github.com/bashu)
 [![Latest Version](https://img.shields.io/pypi/v/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
 [![Downloads](https://img.shields.io/pypi/dm/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
 [![License](https://img.shields.io/github/license/bashu/django-charsleft-widget.svg)](https://pypi.python.org/pypi/django-charsleft-widget/)
+[![Build Status](https://img.shields.io/travis/bashu/django-charsleft-widget.svg)](https://travis-ci.org/bashu/django-charsleft-widget/)
 
 ## Installation
 ```shell
