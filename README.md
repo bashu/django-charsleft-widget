@@ -40,11 +40,17 @@ $ python manage.py collectstatic
 
 All you need now is to import ``CharsLeftArea`` class and override field's widget, for example :
 ```python
+import django
+if django.VERSION < (1,7):
+    from charsleft_widget.fields import CharField
+else:
+    from django.forms.fields import CharField
+
 from charsleft_widget import CharsLeftArea
 
 class Form(forms.Form):
 
-    field = forms.CharField(max_length=128, widget=CharsLeftArea)
+    field = CharField(max_length=128, widget=CharsLeftArea)
 ```
 Please see `example` application. This application is used to manually test the functionalities of this package. This also serves as a good example.
 
