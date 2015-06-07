@@ -3,9 +3,13 @@
 from django import forms
 from django.conf import settings
 from django.utils.safestring import mark_safe
-from django.utils.encoding import force_unicode
 from django.template.loader import render_to_string
 from django.contrib.staticfiles.storage import staticfiles_storage
+
+try:
+    from django.utils.encoding import force_text
+except ImportError:
+    from django.utils.encoding import force_unicode as force_text
 
 
 class MediaMixin(object):
@@ -41,6 +45,6 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
         return mark_safe(render_to_string(template_name, {
             'name': name,
             'widget': output,
-            'maxlength': force_unicode(int(maxlength)),
-            'current': force_unicode(int(maxlength) - len(value)),
+            'maxlength': force_text(int(maxlength)),
+            'current': force_text(int(maxlength) - len(value)),
         }))
