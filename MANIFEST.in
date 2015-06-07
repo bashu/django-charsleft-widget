@@ -1,5 +1,6 @@
 include LICENSE
 include README.md
+recursive-exclude charsleft_widget/tests *
 recursive-include charsleft_widget/locale *
 recursive-include charsleft_widget/static *
 recursive-include charsleft_widget/templates *
