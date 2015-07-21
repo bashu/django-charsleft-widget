@@ -16,8 +16,9 @@ env:
 install:
   - pip install -q django==$DJANGO_VERSION
   - pip install -q -r example/requirements.txt
+  - pip install coveralls
 script:
-  - env PYTHONPATH=`pwd` python example/manage.py test charsleft_widget
+  - env PYTHONPATH=`pwd` coverage run --source=charsleft_widget example/manage.py test charsleft_widget
 matrix:
   exclude:
     - python: "pypy3"
