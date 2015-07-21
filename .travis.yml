@@ -19,6 +19,8 @@ install:
   - pip install coveralls
 script:
   - env PYTHONPATH=`pwd` coverage run --source=charsleft_widget example/manage.py test charsleft_widget
+after_success:
+  coveralls
 matrix:
   exclude:
     - python: "pypy3"
