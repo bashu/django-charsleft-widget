@@ -14,7 +14,7 @@ except ImportError:
 
 class MediaMixin(object):
 
-    class Media:
+    class Media:  # pylint: disable=C1001
         css = {
             'screen': (
                 staticfiles_storage.url(
