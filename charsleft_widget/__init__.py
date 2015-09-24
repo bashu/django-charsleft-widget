@@ -1,1 +1,1 @@
-from .widgets import CharsLeftArea
+from .widgets import CharsLeftArea  # pylint: disable=W0611
