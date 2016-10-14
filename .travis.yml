@@ -14,3 +14,9 @@ install:
   - python setup.py develop
 script:
   - python setup.py test
+matrix:
+  exclude:
+    - python: "pypy3"
+      env: DJANGO_VERSION=1.9
+    - python: "pypy3"
+      env: DJANGO_VERSION=1.10
