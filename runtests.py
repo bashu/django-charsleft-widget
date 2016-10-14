@@ -21,7 +21,9 @@ if not settings.configured:
             }
         },
         INSTALLED_APPS = (
+            'django.contrib.auth',
             'django.contrib.staticfiles',
+            'django.contrib.contenttypes',
 
             'charsleft_widget',
         ),
