@@ -4,19 +4,8 @@ import os
 import re
 import sys
 import codecs
-import subprocess
 
 from setuptools import setup, find_packages
-
-from setuptools.command.test import test as TestCommand
-
-
-class TestRunner(TestCommand):
-    user_options = []
-
-    def run(self):
-        raise SystemExit(subprocess.call([sys.executable, 'runtests.py']))
-
 
 # When creating the sdist, make sure the django.mo file also exists:
 if 'sdist' in sys.argv or 'develop' in sys.argv:
@@ -69,10 +58,9 @@ setup(
     include_package_data=True,
 
     tests_require=[
+        'django-setuptest',
     ],
-    cmdclass={
-        'test': TestRunner,
-    },
+    test_suite='setuptest.setuptest.SetupTestSuite',
 
     zip_safe=False,
     classifiers=[
