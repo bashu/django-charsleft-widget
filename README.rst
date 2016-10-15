@@ -19,9 +19,6 @@ Authored by `Basil Shubin <https://github.com/bashu>`_
 .. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
     :target: https://travis-ci.org/bashu/django-charsleft-widget/
 
-.. .. image:: https://landscape.io/github/bashu/django-charsleft-widget/develop/landscape.svg?style=flat
-..    :target: https://landscape.io/github/bashu/django-charsleft-widget/develop
-
 Installation
 ------------
 
