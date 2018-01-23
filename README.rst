@@ -48,7 +48,7 @@ and just include ``charsleft_widget`` templates
 .. code-block:: html+django
 
     {% include "charsleft_widget/charsleft_widget_css.html" %} {# Before the closing head tag #}
-    {% include "charsleft_widget/charsleft_widget_js.html" %} %} {# Before the closing body tag #}
+    {% include "charsleft_widget/charsleft_widget_js.html" %} {# Before the closing body tag #}
 
 When deploying on production server, don't forget to run:
 
