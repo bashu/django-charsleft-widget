@@ -64,11 +64,7 @@ field's widget, for example:
 
 .. code-block:: python
 
-    import django
-    if django.VERSION < (1,7):
-        from charsleft_widget.fields import CharField
-    else:
-        from django.forms.fields import CharField
+    from django.forms.fields import CharField
 
     from charsleft_widget import CharsLeftArea
 
