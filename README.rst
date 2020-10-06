@@ -19,9 +19,6 @@ Authored by `Basil Shubin <https://github.com/bashu>`_
 .. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
     :target: https://travis-ci.org/bashu/django-charsleft-widget/
 
-.. .. image:: https://landscape.io/github/bashu/django-charsleft-widget/develop/landscape.svg?style=flat
-..    :target: https://landscape.io/github/bashu/django-charsleft-widget/develop
-
 Installation
 ------------
 
@@ -51,7 +48,7 @@ and just include ``charsleft_widget`` templates
 .. code-block:: html+django
 
     {% include "charsleft_widget/charsleft_widget_css.html" %} {# Before the closing head tag #}
-    {% include "charsleft_widget/charsleft_widget_js.html" %} %} {# Before the closing body tag #}
+    {% include "charsleft_widget/charsleft_widget_js.html" %} {# Before the closing body tag #}
 
 When deploying on production server, don't forget to run:
 
@@ -67,11 +64,7 @@ field's widget, for example:
 
 .. code-block:: python
 
-    import django
-    if django.VERSION < (1,7):
-        from charsleft_widget.fields import CharField
-    else:
-        from django.forms.fields import CharField
+    from django.forms.fields import CharField
 
     from charsleft_widget import CharsLeftArea
 

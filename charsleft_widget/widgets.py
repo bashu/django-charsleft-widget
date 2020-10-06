@@ -26,22 +26,22 @@ class MediaMixin(object):
 
 class CharsLeftArea(forms.Textarea, MediaMixin):
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if value is None:
             value = ''
 
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(self.attrs, attrs)
 
         maxlength = final_attrs.get('maxlength', False)
         if maxlength is False:  # fallback to default widget
-            return super(CharsLeftArea, self).render(name, value, attrs)
+            return super(CharsLeftArea, self).render(name, value, attrs, renderer)
 
         if getattr(settings, 'USE_JINJA', False):
             template_name = 'charsleft_widget/textarea.jinja'
         else:
             template_name = 'charsleft_widget/textarea.html'
 
-        output = super(CharsLeftArea, self).render(name, value, attrs)
+        output = super(CharsLeftArea, self).render(name, value, attrs, renderer)
         return mark_safe(render_to_string(template_name, {
             'name': name,
             'widget': output,
