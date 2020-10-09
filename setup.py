@@ -1,28 +1,29 @@
 #!/usr/bin/env python
 
+import codecs
 import os
 import re
 import sys
-import codecs
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 # When creating the sdist, make sure the django.mo file also exists:
-if 'sdist' in sys.argv or 'develop' in sys.argv:
-    os.chdir('charsleft_widget')
+if "sdist" in sys.argv or "develop" in sys.argv:
+    os.chdir("charsleft_widget")
     try:
         from django.core import management
-        management.call_command('compilemessages', stdout=sys.stderr, verbosity=1)
+
+        management.call_command("compilemessages", stdout=sys.stderr, verbosity=1)
     except ImportError:
-        if 'sdist' in sys.argv:
+        if "sdist" in sys.argv:
             raise
     finally:
-        os.chdir('..')
+        os.chdir("..")
 
 
 def read(*parts):
     file_path = os.path.join(os.path.dirname(__file__), *parts)
-    return codecs.open(file_path, encoding='utf-8').read()
+    return codecs.open(file_path, encoding="utf-8").read()
 
 
 def find_version(*parts):
@@ -34,43 +35,37 @@ def find_version(*parts):
 
 
 setup(
-    name='django-charsleft-widget',
-    version=find_version('charsleft_widget', '__init__.py'),
-    license='BSD License',
-
+    name="django-charsleft-widget",
+    version=find_version("charsleft_widget", "__init__.py"),
+    license="BSD License",
     install_requires=[
-        'django>=1.4.2',
+        "django>=1.4.2",
     ],
     requires=[
-        'Django (>=1.4.2)',
+        "Django (>=1.4.2)",
     ],
-
-    description='Custom widget that limits the number of characters that can be entered in a textarea field',
-    long_description=read('README.rst'),
-
-    author='Basil Shubin',
-    author_email='basil.shubin@gmail.com',
-
-    url='http://github.com/bashu/django-charsleft-widget',
-    download_url='https://github.com/bashu/django-charsleft-widget/zipball/master',
-
-    packages=find_packages(exclude=('example*', '*.tests*')),
+    description="Custom widget that limits the number of characters that can be entered in a textarea field",
+    long_description=read("README.rst"),
+    author="Basil Shubin",
+    author_email="basil.shubin@gmail.com",
+    url="http://github.com/bashu/django-charsleft-widget",
+    download_url="https://github.com/bashu/django-charsleft-widget/zipball/master",
+    packages=find_packages(exclude=("example*", "*.tests*")),
     include_package_data=True,
-
     zip_safe=False,
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Web Environment',
-        'Framework :: Django',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
 )
