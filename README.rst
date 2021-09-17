@@ -15,7 +15,7 @@ Authored by `Basil Shubin <https://github.com/bashu>`_
     :target: https://pypi.python.org/pypi/django-charsleft-widget/
 
 .. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
-    :target: https://travis-ci.org/bashu/django-charsleft-widget/
+    :target: https://travis-ci.com/github/bashu/django-charsleft-widget/
 
 .. raw:: html
 
