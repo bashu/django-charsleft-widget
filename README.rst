@@ -1,9 +1,7 @@
 django-charsleft-widget
 =======================
 
-django-charsleft-widget is a custom widget that adds a input clearing
-button on any input fields that are using it. It clears the value, and
-returns focus to that field.
+django-charsleft-widget is a custom widget that limits the number of characters that can be entered in a textarea field.
 
 Authored by `Basil Shubin <https://github.com/bashu>`_
 
@@ -18,6 +16,12 @@ Authored by `Basil Shubin <https://github.com/bashu>`_
 
 .. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
     :target: https://travis-ci.org/bashu/django-charsleft-widget/
+
+.. raw:: html
+
+    <p align="center">
+        <img src="https://raw.githubusercontent.com/bashu/django-charsleft-widget/develop/showcase.gif">
+    </p>
 
 Installation
 ------------
