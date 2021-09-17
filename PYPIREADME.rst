@@ -17,11 +17,10 @@ Authored by `Basil Shubin <https://github.com/bashu>`_
 .. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
     :target: https://travis-ci.com/github/bashu/django-charsleft-widget/
 
-.. raw:: html
-
-    <p align="center">
-        <img src="https://raw.githubusercontent.com/bashu/django-charsleft-widget/develop/showcase.gif">
-    </p>
+.. image:: https://raw.githubusercontent.com/bashu/django-charsleft-widget/develop/showcase.gif
+   :target: https://raw.githubusercontent.com/bashu/django-charsleft-widget/develop/showcase.gif
+   :align: center
+   :width: 600px
 
 Installation
 ------------
