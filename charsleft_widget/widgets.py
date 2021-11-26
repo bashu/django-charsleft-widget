@@ -1,18 +1,12 @@
-# -*- coding: utf-8 -*-
-
 from django import forms
 from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.template.loader import render_to_string
+from django.utils.encoding import force_str
 from django.utils.safestring import mark_safe
 
-try:
-    from django.utils.encoding import force_str as force_text
-except ImportError:
-    from django.utils.encoding import force_text
 
-
-class MediaMixin(object):
+class MediaMixin:
     class Media:  # pylint: disable=C1001
         css = {
             "screen": (
@@ -33,22 +27,22 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
 
         maxlength = final_attrs.get("maxlength", False)
         if maxlength is False:  # fallback to default widget
-            return super(CharsLeftArea, self).render(name, value, attrs, renderer)
+            return super().render(name, value, attrs, renderer)
 
         if getattr(settings, "USE_JINJA", False):
             template_name = "charsleft_widget/textarea.jinja"
         else:
             template_name = "charsleft_widget/textarea.html"
 
-        output = super(CharsLeftArea, self).render(name, value, attrs, renderer)
+        output = super().render(name, value, attrs, renderer)
         return mark_safe(
             render_to_string(
                 template_name,
                 {
                     "name": name,
                     "widget": output,
-                    "maxlength": force_text(int(maxlength)),
-                    "current": force_text(int(maxlength) - len(value)),
+                    "maxlength": force_str(int(maxlength)),
+                    "current": force_str(int(maxlength) - len(value)),
                 },
             )
         )
