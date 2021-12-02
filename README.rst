@@ -24,6 +24,8 @@ django-charsleft-widget is a custom widget that limits the number of characters 
 Installation
 ------------
 
+First install the module, preferably in a virtual environment. It can be installed from PyPI:
+
 .. code-block:: bash
 
     pip install django-charsleft-widget
@@ -80,6 +82,12 @@ a good example.
 
 You need only Django 1.4 or above to run that. It might run on older
 versions but that is not tested.
+
+Contributing
+------------
+
+If you like this module, forked it, or would like to improve it, please let us know!
+Pull requests are welcome too. :-)
 
 License
 -------
