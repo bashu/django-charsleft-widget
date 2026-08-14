@@ -16,8 +16,12 @@ class CharsLeftAreaDjangoTest(TestCase):
         settings.USE_JINJA = self.old_USE_JINJA
 
     def test_render(self):
-        response = self.field.widget.render("value", "test", {"id": "id_field", "maxlength": 512})
-        self.assertTrue("charsleft" in response and "508" in response)
+        response = self.field.widget.render(
+            "value",
+            "test",
+            {"id": "id_field", "maxlength": 512},
+        )
+        assert all(s in response for s in ("charsleft", "508"))
 
 
 class CharsLeftAreaJinjaTest(TestCase):
@@ -31,8 +35,12 @@ class CharsLeftAreaJinjaTest(TestCase):
         settings.USE_JINJA = self.old_USE_JINJA
 
     def test_render(self):
-        response = self.field.widget.render("value", "test", {"id": "id_field", "maxlength": 512})
-        self.assertTrue("charsleft" in response and "508" in response)
+        response = self.field.widget.render(
+            "value",
+            "test",
+            {"id": "id_field", "maxlength": 512},
+        )
+        assert all(s in response for s in ("charsleft", "508"))
 
 
 class CharsLeftAreaFallbackTest(TestCase):
@@ -41,4 +49,4 @@ class CharsLeftAreaFallbackTest(TestCase):
 
     def test_fallback(self):
         response = self.field.widget.render("value", None, {"id": "id_field"})
-        self.assertFalse("charsleft" in response and "count" in response)
+        assert not ("charsleft" in response and "count" in response)

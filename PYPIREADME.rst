@@ -1,17 +1,17 @@
 django-charsleft-widget
 =======================
 
-.. image:: https://img.shields.io/pypi/v/django-charsleft-widget.svg
+.. image:: https://badge.fury.io/py/django-charsleft-widget.svg
+    :target: https://badge.fury.io/py/django-charsleft-widget
+
+.. image:: https://img.shields.io/pypi/pyversions/django-charsleft-widget.svg
     :target: https://pypi.python.org/pypi/django-charsleft-widget/
 
-.. image:: https://img.shields.io/pypi/dm/django-charsleft-widget.svg
+.. image:: https://img.shields.io/pypi/djversions/django-charsleft-widget.svg
     :target: https://pypi.python.org/pypi/django-charsleft-widget/
 
-.. image:: https://img.shields.io/github/license/bashu/django-charsleft-widget.svg
-    :target: https://pypi.python.org/pypi/django-charsleft-widget/
-
-.. image:: https://img.shields.io/travis/bashu/django-charsleft-widget.svg
-    :target: https://travis-ci.com/github/bashu/django-charsleft-widget/
+.. image:: https://github.com/bashu/django-charsleft-widget/actions/workflows/test.yml/badge.svg
+    :target: https://github.com/bashu/django-charsleft-widget/actions/workflows/test.yml
 
 django-charsleft-widget is a custom widget that limits the number of characters that can be entered in a textarea field.
 

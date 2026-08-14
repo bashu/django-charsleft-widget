@@ -13,7 +13,7 @@ class MediaMixin:
                 staticfiles_storage.url(
                     "charsleft_widget/css/charsleft.min.css",
                 ),
-            )
+            ),
         }
         js = (staticfiles_storage.url("charsleft_widget/js/charsleft.min.js"),)
 
@@ -35,7 +35,9 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
             template_name = "charsleft_widget/textarea.html"
 
         output = super().render(name, value, attrs, renderer)
-        return mark_safe(
+        # Widget.render() is required to return a SafeString; the template's own
+        # variables are still autoescaped by render_to_string().
+        return mark_safe(  # noqa: S308
             render_to_string(
                 template_name,
                 {
@@ -44,5 +46,5 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
                     "maxlength": force_str(int(maxlength)),
                     "current": force_str(int(maxlength) - len(value)),
                 },
-            )
+            ),
         )

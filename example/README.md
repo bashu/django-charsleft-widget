@@ -23,4 +23,3 @@ python example/manage.py runserver
 ```
 
 Good luck!
-

@@ -1,7 +1,0 @@
-include CHANGES.rst
-include LICENSE
-include README.rst
-recursive-exclude charsleft_widget/tests *
-recursive-include charsleft_widget/locale *.mo
-recursive-include charsleft_widget/static *.css *.js
-recursive-include charsleft_widget/templates *.html *.jinja
