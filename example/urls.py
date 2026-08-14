@@ -3,5 +3,5 @@ from django.urls import path
 from .views import TestView
 
 urlpatterns = [
-    path('', TestView.as_view(template_name="homepage.html")),
+    path("", TestView.as_view(template_name="homepage.html")),
 ]

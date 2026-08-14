@@ -1,22 +1,15 @@
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-import re
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-SECRET_KEY = "DUMMY_SECRET_KEY"
-
-INTERNAL_IPS = []
+SECRET_KEY = "DUMMY_SECRET_KEY"  # noqa: S105
 
 # Application definition
 
 PROJECT_APPS = ["charsleft_widget.tests", "charsleft_widget"]
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
     "django.contrib.contenttypes",
+    "django.contrib.auth",
     "django.contrib.staticfiles",
-] + PROJECT_APPS
+    *PROJECT_APPS,
+]
 
 TEMPLATES = [
     {
@@ -35,6 +28,13 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ],
         },
+    },
+    {
+        # Mirrors the app-dirs convention a real project uses to serve
+        # "charsleft_widget/textarea.jinja" from charsleft_widget/jinja2/.
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [],
+        "APP_DIRS": True,
     },
 ]
 

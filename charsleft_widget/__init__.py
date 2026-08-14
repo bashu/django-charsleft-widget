@@ -1,1 +1,1 @@
-from .widgets import CharsLeftArea  # noqa
+from .widgets import CharsLeftArea  # noqa: F401

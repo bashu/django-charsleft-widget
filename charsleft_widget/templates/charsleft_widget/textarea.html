@@ -1,1 +1,5 @@
-{% load i18n %}<div class="charsleft" data-charsleft-field="{{ name }}" data-maxlength="{{ maxlength }}">{{ widget }}<span class="count">{% blocktrans %}<span class="current">{{ current }}</span> characters remaining{% endblocktrans %}</span></div>
+{% load i18n %}
+
+<div class="charsleft"
+     data-charsleft-field="{{ name }}"
+     data-maxlength="{{ maxlength }}">{{ widget }}<span class="count">{% blocktrans %}<span class="current">{{ current }}</span> characters remaining{% endblocktrans %}</span></div>
