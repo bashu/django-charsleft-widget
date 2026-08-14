@@ -2,13 +2,12 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/bashu/django-charsleft-widget/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                              |    Stmts |     Miss |   Cover |   Missing |
-|---------------------------------- | -------: | -------: | ------: | --------: |
-| charsleft\_widget/\_\_init\_\_.py |        1 |        0 |    100% |           |
-| charsleft\_widget/fields.py       |        7 |        7 |      0% |      1-10 |
-| charsleft\_widget/models.py       |        0 |        0 |    100% |           |
-| charsleft\_widget/widgets.py      |       23 |        0 |    100% |           |
-| **TOTAL**                         |   **31** |    **7** | **77%** |           |
+| Name                              |    Stmts |     Miss |    Cover |   Missing |
+|---------------------------------- | -------: | -------: | -------: | --------: |
+| charsleft\_widget/\_\_init\_\_.py |        1 |        0 |     100% |           |
+| charsleft\_widget/models.py       |        0 |        0 |     100% |           |
+| charsleft\_widget/widgets.py      |       23 |        0 |     100% |           |
+| **TOTAL**                         |   **24** |    **0** | **100%** |           |
 
 
 ## Setup coverage badge
