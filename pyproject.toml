@@ -43,6 +43,7 @@ dev = [
   "django-upgrade==1.31.1",
   "djlint==1.44.2",
   "factory-boy==3.3.3",
+  "jinja2==3.1.6",
   "mypy==2.3.0",
   "pre-commit==4.6.2",
   "pytest==9.1.1",
@@ -54,7 +55,7 @@ dev = [
 [tool.setuptools]
 packages.find.include = [ "charsleft_widget*" ]
 include-package-data = true
-package-data.charsleft_widget = [ "static/**/*", "templates/**/*.html" ]
+package-data.charsleft_widget = [ "jinja2/**/*.jinja", "locale/**/*", "static/**/*", "templates/**/*.html" ]
 dynamic.readme = { file = [ "PYPIREADME.rst", "CHANGES.rst" ], content-type = "text/x-rst" }
 zip-safe = false
 
