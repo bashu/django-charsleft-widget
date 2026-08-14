@@ -1,10 +1,10 @@
 Changes
 -------
 
-1.0.1 (WIP)
-~~~~~~~~~~~
+1.0.1 (2026-08-14)
+~~~~~~~~~~~~~~~~~~
 
-* Added Django 5.2, 6.0 and 6.1 support.
+* Added Django 6.0 and 6.1 support, alongside existing Django 5.2 support (fixes #7).
 * Dropped Python < 3.10 support.
 * Reformatted code and templates, and fixed ruff lint findings.
 
