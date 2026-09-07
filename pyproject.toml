@@ -54,6 +54,7 @@ dev = [
 
 [tool.setuptools]
 packages.find.include = [ "charsleft_widget*" ]
+packages.find.exclude = [ "charsleft_widget.tests*" ]
 include-package-data = true
 package-data.charsleft_widget = [ "jinja2/**/*.jinja", "locale/**/*", "static/**/*", "templates/**/*.html" ]
 dynamic.readme = { file = [ "PYPIREADME.rst", "CHANGES.rst" ], content-type = "text/x-rst" }
