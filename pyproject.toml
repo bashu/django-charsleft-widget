@@ -180,6 +180,6 @@ ini_options.addopts = [ "--ds=charsleft_widget.tests.settings", "--reuse-db", "-
 
 # ==== Coverage ====
 [tool.coverage]
+run.source = [ "charsleft_widget" ]
 run.omit = [ "*/migrations/*", "*/tests/*" ]
 run.relative_files = true
-run.source = [ "charsleft_widget" ]
