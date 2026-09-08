@@ -27,12 +27,6 @@ Installation
 
     pip install django-charsleft-widget
 
-External dependencies
-~~~~~~~~~~~~~~~~~~~~~
-
-* jQuery - this is not included in the package since it is expected
-  that in most scenarios this would already be available.
-
 Setup
 -----
 
