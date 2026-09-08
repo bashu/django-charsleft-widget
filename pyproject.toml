@@ -4,7 +4,7 @@ requires = [ "setuptools>=61" ]
 
 [project]
 name = "django-charsleft-widget"
-version = "1.1.0"
+version = "1.2.0"
 description = "Custom widget that limits the number of characters that can be entered in a textarea field"
 license = "BSD-3-Clause"
 authors = [ { name = "Basil Shubin", email = "basil.shubin@gmail.com" } ]
@@ -38,22 +38,23 @@ urls.homepage = "https://github.com/bashu/django-charsleft-widget/"
 
 [dependency-groups]
 dev = [
-  "coverage==7.15.4",
+  "coverage==7.16.0",
   "django-stubs[compatible-mypy]==6.0.9",
-  "django-upgrade==1.31.1",
-  "djlint==1.44.2",
+  "django-upgrade==1.32.0",
+  "djlint==1.45.2",
   "factory-boy==3.3.3",
   "jinja2==3.1.6",
-  "mypy==2.3.0",
+  "mypy==2.3.1",
   "pre-commit==4.6.2",
   "pytest==9.1.1",
   "pytest-django==4.14.0",
   "pytest-sugar==1.1.1",
-  "ruff==0.16.2",
+  "ruff==0.16.6",
 ]
 
 [tool.setuptools]
 packages.find.include = [ "charsleft_widget*" ]
+packages.find.exclude = [ "charsleft_widget.tests*" ]
 include-package-data = true
 package-data.charsleft_widget = [ "jinja2/**/*.jinja", "locale/**/*", "static/**/*", "templates/**/*.html" ]
 dynamic.readme = { file = [ "PYPIREADME.rst", "CHANGES.rst" ], content-type = "text/x-rst" }
@@ -179,6 +180,6 @@ ini_options.addopts = [ "--ds=charsleft_widget.tests.settings", "--reuse-db", "-
 
 # ==== Coverage ====
 [tool.coverage]
+run.source = [ "charsleft_widget" ]
 run.omit = [ "*/migrations/*", "*/tests/*" ]
 run.relative_files = true
-run.source = [ "charsleft_widget" ]

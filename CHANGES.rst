@@ -1,6 +1,15 @@
 Changes
 -------
 
+1.2.0 (2026-09-08)
+~~~~~~~~~~~~~~~~~~
+
+* Dropped the jQuery dependency: ``charsleft.js`` is now plain JavaScript
+  with no reliance on ``window.jQuery`` or ``window.django.jQuery``.
+  Pages that inject markup after page load (formsets, ajax) now re-bind
+  newly-added ``.charsleft`` widgets via ``window.charsleft(scope)``
+  instead of the former ``$.fn.charsleft`` jQuery plugin.
+
 1.1.0 (2026-08-14)
 ~~~~~~~~~~~~~~~~~~
 
