@@ -1,8 +1,11 @@
+from typing import Any
+
 from django import forms
-from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.forms.renderers import BaseRenderer
 from django.template.loader import render_to_string
 from django.utils.encoding import force_str
+from django.utils.safestring import SafeString
 from django.utils.safestring import mark_safe
 
 
@@ -19,7 +22,13 @@ class MediaMixin:
 
 
 class CharsLeftArea(forms.Textarea, MediaMixin):
-    def render(self, name, value, attrs=None, renderer=None):
+    def render(
+        self,
+        name: str,
+        value: Any,
+        attrs: dict[str, Any] | None = None,
+        renderer: BaseRenderer | None = None,
+    ) -> SafeString:
         if value is None:
             value = ""
 
@@ -29,17 +38,12 @@ class CharsLeftArea(forms.Textarea, MediaMixin):
         if maxlength is False:  # fallback to default widget
             return super().render(name, value, attrs, renderer)
 
-        if getattr(settings, "USE_JINJA", False):
-            template_name = "charsleft_widget/textarea.jinja"
-        else:
-            template_name = "charsleft_widget/textarea.html"
-
         output = super().render(name, value, attrs, renderer)
         # Widget.render() is required to return a SafeString; the template's own
         # variables are still autoescaped by render_to_string().
         return mark_safe(  # noqa: S308
             render_to_string(
-                template_name,
+                "charsleft_widget/textarea.html",
                 {
                     "name": name,
                     "widget": output,

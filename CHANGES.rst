@@ -1,6 +1,17 @@
 Changes
 -------
 
+2.0.0 (2026-11-14)
+~~~~~~~~~~~~~~~~~~
+
+* Removed Jinja2 support: the ``USE_JINJA`` setting is no longer recognised
+  and the ``charsleft_widget/textarea.jinja`` template is gone; the widget
+  always renders ``charsleft_widget/textarea.html``.
+* Moved the package to a ``src`` layout and switched the build backend from
+  setuptools to hatchling; tests moved to a top-level ``tests`` directory.
+* Shipped a ``py.typed`` marker, so type checkers now use the package's
+  inline type hints.
+
 1.3.0 (2026-10-10)
 ~~~~~~~~~~~~~~~~~~
 
