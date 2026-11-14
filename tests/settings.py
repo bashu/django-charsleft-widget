@@ -2,7 +2,7 @@ SECRET_KEY = "DUMMY_SECRET_KEY"  # noqa: S105
 
 # Application definition
 
-PROJECT_APPS = ["tests", "charsleft_widget"]
+PROJECT_APPS = ["charsleft_widget"]
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",

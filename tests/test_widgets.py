@@ -1,39 +1,32 @@
-from django import forms
-from django.test import TestCase
+import pytest
 
 from charsleft_widget.widgets import CharsLeftArea
 
 
-class CharsLeftAreaDjangoTest(TestCase):
-    def setUp(self):
-        self.field = forms.CharField(required=False, widget=CharsLeftArea)
+@pytest.mark.parametrize(
+    ("value", "maxlength", "expected_current"),
+    [
+        pytest.param("test", 512, 508, id="within-limit"),
+        pytest.param("x" * 20, 10, -10, id="over-limit"),
+    ],
+)
+def test_render_shows_chars_left(
+    value: str,
+    maxlength: int,
+    expected_current: int,
+) -> None:
+    widget = CharsLeftArea()
 
-    def test_render(self):
-        response = self.field.widget.render(
-            "value",
-            "test",
-            {"id": "id_field", "maxlength": 512},
-        )
-        assert all(s in response for s in ("charsleft", "508"))
+    html = widget.render("value", value, {"id": "id_field", "maxlength": maxlength})
 
-
-class CharsLeftAreaOverflowTest(TestCase):
-    def setUp(self):
-        self.field = forms.CharField(required=False, widget=CharsLeftArea)
-
-    def test_value_already_over_maxlength(self):
-        response = self.field.widget.render(
-            "value",
-            "x" * 20,
-            {"id": "id_field", "maxlength": 10},
-        )
-        assert "-10" in response
+    assert 'class="charsleft"' in html
+    assert f'<span class="current">{expected_current}</span>' in html
 
 
-class CharsLeftAreaFallbackTest(TestCase):
-    def setUp(self):
-        self.field = forms.CharField(required=False, widget=CharsLeftArea)
+def test_render_without_maxlength_falls_back_to_textarea() -> None:
+    widget = CharsLeftArea()
 
-    def test_fallback(self):
-        response = self.field.widget.render("value", None, {"id": "id_field"})
-        assert not ("charsleft" in response and "count" in response)
+    html = widget.render("value", None, {"id": "id_field"})
+
+    assert html.startswith("<textarea")
+    assert "charsleft" not in html
