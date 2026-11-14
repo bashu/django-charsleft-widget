@@ -1,7 +1,7 @@
 Changes
 -------
 
-2.0.0 (unreleased)
+2.0.0 (2026-11-14)
 ~~~~~~~~~~~~~~~~~~
 
 * Removed Jinja2 support: the ``USE_JINJA`` setting is no longer recognised
