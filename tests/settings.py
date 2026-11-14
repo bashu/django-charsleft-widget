@@ -2,14 +2,9 @@ SECRET_KEY = "DUMMY_SECRET_KEY"  # noqa: S105
 
 # Application definition
 
-PROJECT_APPS = ["charsleft_widget.tests", "charsleft_widget"]
+PROJECT_APPS = ["tests", "charsleft_widget"]
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.admin",
     "django.contrib.staticfiles",
     *PROJECT_APPS,
 ]

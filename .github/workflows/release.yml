@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y gettext
       - name: Compile translations
         run: uv run django-admin compilemessages
-        working-directory: charsleft_widget
+        working-directory: src/charsleft_widget
       - name: Build package
         run: uv build
       - name: Upload artifacts
