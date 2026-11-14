@@ -5,7 +5,6 @@
 | Name                                  |    Stmts |     Miss |    Cover |   Missing |
 |-------------------------------------- | -------: | -------: | -------: | --------: |
 | src/charsleft\_widget/\_\_init\_\_.py |        1 |        0 |     100% |           |
-| src/charsleft\_widget/models.py       |        0 |        0 |     100% |           |
 | src/charsleft\_widget/widgets.py      |       19 |        0 |     100% |           |
 | **TOTAL**                             |   **20** |    **0** | **100%** |           |
 
