@@ -43,7 +43,6 @@ dev = [
   "django-stubs[compatible-mypy]==6.1.2",
   "django-upgrade==1.33.0",
   "djlint==1.49.10",
-  "jinja2==3.1.6",
   "mypy==2.4.1",
   "pre-commit==4.7.0",
   "pytest==9.2.0",

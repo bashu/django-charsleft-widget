@@ -14,12 +14,6 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "APP_DIRS": True,
     },
-    {
-        # Mirrors the app-dirs convention a real project uses to serve
-        # "charsleft_widget/textarea.jinja" from charsleft_widget/jinja2/.
-        "BACKEND": "django.template.backends.jinja2.Jinja2",
-        "APP_DIRS": True,
-    },
 ]
 
 # Database

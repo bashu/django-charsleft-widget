@@ -19,7 +19,6 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 
 #: templates/charsleft_widget/textarea.html:1
-#: templates/charsleft_widget/textarea.jinja:1
 #, python-format
 msgid "<span class=\"current\">%(current)s</span> characters remaining"
 msgstr "Осталось <span class=\"current\">%(current)s</span> знаков"
