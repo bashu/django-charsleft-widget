@@ -9,6 +9,8 @@ Changes
   always renders ``charsleft_widget/textarea.html``.
 * Moved the package to a ``src`` layout and switched the build backend from
   setuptools to hatchling; tests moved to a top-level ``tests`` directory.
+* Shipped a ``py.typed`` marker, so type checkers now use the package's
+  inline type hints.
 
 1.3.0 (2026-10-10)
 ~~~~~~~~~~~~~~~~~~
