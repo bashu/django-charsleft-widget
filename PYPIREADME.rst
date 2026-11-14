@@ -54,7 +54,7 @@ When deploying on production server, don't forget to run:
 Usage
 -----
 
-All you need now is to import ``ClearableInput`` class and override
+All you need now is to import ``CharsLeftArea`` class and override
 field's widget, for example:
 
 .. code-block:: python
